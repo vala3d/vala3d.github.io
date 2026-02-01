@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="VALA - Visibility-Aware Language Aggregation">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="VALA is a lightweight visibility-aware feature propagation and robust multi-view aggregation method for distilling open-vocabulary language features into 3D Gaussian Splatting.">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <meta name="keywords" content="3D Gaussian Splatting, open-vocabulary segmentation, CLIP, language features, feature distillation, 3D scene understanding">
+  <!-- TODO: List all authors -->
+  <meta name="author" content="Sen Wang, Kunyi Li, Siyun Liang, Elena Alegret, Jing Ma, Nassir Navab, Stefano Gasperini">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="Technical University of Munich / MCML">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="Visibility-Aware Language Aggregation for Open-Vocabulary Segmentation in 3D Gaussian Splatting">
+  <!-- TODO: Same as description above -->
+  <meta property="og:description" content="VALA is a lightweight visibility-aware feature propagation and robust multi-view aggregation method for distilling open-vocabulary language features into 3D Gaussian Splatting.">
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="https://vala.github.io/">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="https://vala.github.io/static/images/teaser.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Visibility-Aware Language Aggregation for Open-Vocabulary Segmentation in 3D Gaussian Splatting - Research Preview">
+  <meta property="article:published_time" content="2025-09-05T00:00:00.000Z">
+  <meta property="article:author" content="Sen Wang">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="3D Gaussian Splatting">
+  <meta property="article:tag" content="Open-Vocabulary Segmentation">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: Replace with your lab/institution Twitter handle -->
+  <meta name="twitter:site" content="@">
+  <!-- TODO: Replace with first author's Twitter handle -->
+  <meta name="twitter:creator" content="@">
+  <!-- TODO: Same as paper title above -->
+  <meta name="twitter:title" content="Visibility-Aware Language Aggregation for Open-Vocabulary Segmentation in 3D Gaussian Splatting">
+  <!-- TODO: Same as description above -->
+  <meta name="twitter:description" content="VALA is a lightweight visibility-aware feature propagation and robust multi-view aggregation method for distilling open-vocabulary language features into 3D Gaussian Splatting.">
+  <!-- TODO: Same as social preview image above -->
+  <meta name="twitter:image" content="https://vala.github.io/static/images/teaser.png">
+  <meta name="twitter:image:alt" content="Visibility-Aware Language Aggregation for Open-Vocabulary Segmentation in 3D Gaussian Splatting - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="Visibility-Aware Language Aggregation for Open-Vocabulary Segmentation in 3D Gaussian Splatting">
+  <meta name="citation_author" content="Wang, Sen">
+  <meta name="citation_author" content="Li, Kunyi">
+  <meta name="citation_publication_date" content="2025">
+  <meta name="citation_conference_title" content="3DV 2026">
+  <meta name="citation_pdf_url" content="https://vala.github.io/static/pdfs/VALA_paper.pdf">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>VALA | Project Page</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Visibility-Aware Language Aggregation for Open-Vocabulary Segmentation in 3D Gaussian Splatting",
+    "description": "VALA is a lightweight visibility-aware feature propagation and robust multi-view aggregation method for distilling open-vocabulary language features into 3D Gaussian Splatting.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "FIRST_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "TUM"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "SECOND_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "TUM"
+        }
+      }
+    ],
+    "datePublished": "2024-01-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "3DV 2026"
+    },
+    "url": "https://vala.github.io/",
+    "image": "https://vala.github.io/static/images/teaser.png",
+    "keywords": ["3D Gaussian Splatting", "open-vocabulary segmentation", "language features", "feature distillation"],
+    "abstract": "Recently, distilling open-vocabulary language features from 2D images into 3D Gaussians has attracted significant attention...",
+    "citation": "wang2025vala",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://vala.github.io/"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "RESEARCH_AREA_1"
+      },
+      {
+        "@type": "Thing", 
+        "name": "RESEARCH_AREA_2"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Technical University of Munich / MCML",
+    "url": "https://www.tum.de/",
+    "logo": "https://vala.github.io/static/images/favicon.ico",
+    "sameAs": ["https://github.com/changandao/VALA"]
+  }
+  </script>
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+<main id="main-content">
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">VALA</h1>
+          <h2 class="title is-3 publication-title" style="margin-top: 0; margin-bottom: 0">Visibility-Aware Language Aggregation for Open-Vocabulary Segmentation in 3D Gaussian Splatting</h2>
+
+          <div class="is-size-5 publication-authors" style="margin-top: 1.25rem">
+            <span class="author-block">Sen Wang<sup>1,2</sup>,</span>
+            <span class="author-block">Kunyi Li<sup>1,2</sup>,</span>
+            <span class="author-block">Siyun Liang<sup>1</sup>,</span>
+            <span class="author-block">Elena Alegret<sup>1</sup>,</span>
+            <span class="author-block">Jing Ma<sup>4</sup>,</span>
+            <br>
+            <span class="author-block">Nassir Navab<sup>1,2</sup>,</span>
+            <span class="author-block">Stefano Gasperini<sup>1,2,3</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Technical University of Munich</span>
+            <span class="author-block"><sup>2</sup>Munich Center for Machine Learning</span>
+            <span class="author-block"><sup>3</sup>VisualAIs</span>
+            <span class="author-block"><sup>4</sup>Ludwig Maximilian University of Munich</span>
+            <div class="publication-venue">3DV 2026</div>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="static/pdfs/VALA_paper.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2509.05515" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://github.com/changandao/VALA" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/teaser.png" alt="Teaser">
+      <div class="content has-text-justified" style="margin-top: 1rem">
+        <p>
+          TL;DR. VALA assigns 2D language features to 3D Gaussians in a visibility-aware way and aggregates noisy multi-view features via a streaming cosine geometric median for consistent open-vocabulary 3D segmentation.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+            Recently, distilling open-vocabulary language features from 2D images into 3D Gaussians has attracted significant attention. Although existing methods achieve impressive language-based interactions of 3D scenes, we observe two fundamental issues: background Gaussians contributing negligibly to a rendered pixel get the same feature as the dominant foreground ones, and multi-view inconsistencies due to view-specific noise in language embeddings. We introduce Visibility-Aware Language Aggregation (VALA), a lightweight yet effective method that computes marginal contributions for each ray and applies a visibility-aware gate to retain only visible Gaussians. Moreover, we propose a streaming weighted geometric median in cosine space to merge noisy multi-view features. Our method yields a robust, view-consistent language feature embedding in a fast and memory-efficient manner. VALA improves open-vocabulary localization and segmentation across reference datasets, consistently surpassing existing works.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--BibTex citation -->
+  
+
+<!-- Method overview -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Method Overview</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="static/images/method.png" alt="Method overview">
+          <div class="content has-text-justified">
+            <p>
+              Overview of VALA. We compute per-ray marginal contributions to obtain visibility-aware gating, and aggregate multi-view language features with a streaming cosine geometric median to reduce view-specific noise and improve cross-view consistency.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Visibility-aware Gating</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="static/images/gating.png" alt="Visibility-aware gating">
+          <div class="content has-text-justified">
+            <p>
+              VALA retains only visible Gaussians when propagating 2D language features, preventing background Gaussians (with negligible contribution) from inheriting foreground semantics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Results -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Results</h2>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="static/images/results_lerf.png" alt="LeRF-OVS qualitative results">
+          <h2 class="subtitle has-text-centered">Qualitative results on LeRF-OVS.</h2>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="static/images/results_scannet.png" alt="ScanNet qualitative results">
+          <h2 class="subtitle has-text-centered">Qualitative results on ScanNet.</h2>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="static/images/results_waymo.png" alt="Outdoor dataset qualitative results">
+          <h2 class="subtitle has-text-centered">Supplementary qualitative results on an outdoor dataset (Waymo).</h2>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="static/images/results_supp_scannet.png" alt="Additional ScanNet results">
+          <h2 class="subtitle has-text-centered">Supplementary qualitative results on ScanNet.</h2>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="static/images/stress_test.png" alt="Stress test curve">
+          <h2 class="subtitle has-text-centered">Stress test curve (supplementary).</h2>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@misc{wang2025vala,
+  title={Visibility-Aware Language Aggregation for Open-Vocabulary Segmentation in 3D Gaussian Splatting},
+  author={Sen Wang and Kunyi Li and Siyun Liang and Elena Alegret and Jing Ma and Nassir Navab and Stefano Gasperini},
+  year={2025},
+  eprint={2509.05515},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2509.05515}
+}
+</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
